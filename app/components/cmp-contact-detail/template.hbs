@@ -1,0 +1,90 @@
+<div class="photo-wrapper">
+  <img src="{{contact.picture}}" alt="">
+</div>
+
+<div class="information">
+  <div class="">
+    {{input type="text" name="name" value=contact.firstName placeholder="First Name required... "}}
+    {{#if contactErrors.firstName}}
+      <label class="error firstName"> {{contactErrors.firstName}}</label>
+    {{/if}}
+  </div>
+  <div class="">
+    {{input type="text" name="lastname" value=contact.lastName placeholder="Last Name required..."}}
+    {{#if contactErrors.lastName}}
+      <label class="error lastName"> {{contactErrors.lastName}}</label>
+    {{/if}}
+  </div>
+</div>
+<section>
+  <div class="details">
+    <div class="right">
+      <label for="email">Email *</label>
+      {{email-input name="email" value=contact.email placeholder="example@mail.com"}}
+      {{#if contactErrors.email}}
+        <div class="error email"> {{contactErrors.email}}</div>
+      {{/if}}
+    </div>
+
+    <div class="left">
+      <label for="birthday">Birthday</label>
+      {{pikaday-input name="birthday" value=contact.birthday placeholder="" format="MM/DD/YYYY"}}
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="right">
+      <label for="address">Address</label>
+      {{input type="text" name="address" value=contact.address placeholder=""}}
+    </div>
+
+    <div class="left">
+      <label for="mobile">Mobile</label>
+      {{input-mask type="tel" mask="(999) 999-9999" name="mobile" value=contact.phone placeholder=""}}
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="right">
+      <label for="workPhone">Work Phone</label>
+      {{input-mask type="tel" mask="(999) 999-9999" name="workPhone" value=contact.workPhone placeholder=""}}
+    </div>
+
+    <div class="left">
+      <label for="homePhone">Home Phone</label>
+      {{input-mask type="tel" mask="(999) 999-9999" name="homePhone" value=contact.homePhone placeholder=""}}
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="right">
+      <label for="jobTitle">Job Title *</label>
+      {{input type="text" name="jobTitle" value=contact.jobTitle placeholder=""}}
+      {{#if contactErrors.jobTitle}}
+        <div class="error jobTitle"> {{contactErrors.jobTitle}}</div>
+      {{/if}}
+    </div>
+
+    <div class="left">
+      <label for="company">Company *</label>
+      {{input type="text" name="company" value=contact.company }}
+      {{#if contactErrors.company}}
+        <div class="error company"> {{contactErrors.company}}</div>
+      {{/if}}
+    </div>
+  </div>
+</section>
+<section>
+  <button class="cancel" type="button" name="cancel" {{action "cancel"}}>Cancel</button>
+  {{#if contact.id}}
+    <button class="delete" type="button" name="delete" {{action "toggleDeleteRecord"}}>Delete</button>
+  {{/if}}
+  <button class="save" type="button" name="save" {{action "save"}}>Save</button>
+</section>
+
+{{#if isDeleting}}
+  {{cmp-delete
+    isDeleting = isDeleting
+    delete = (action "delete")
+  }}
+{{/if}}

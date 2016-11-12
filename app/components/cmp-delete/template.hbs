@@ -1,0 +1,9 @@
+{{#modal-dialog close="toggleDeleteRecord"
+                targetAttachment="center"
+                translucentOverlay=true}}
+  <h2>Are you sure you want to delete this record?</h2>
+  <div class="section-actions">
+    <button class="btn-cancel" {{action "toggleDeleteRecord"}}>No</button>
+    <button class="btn-delete" {{action "delete"}}>Yes</button>
+  </div>
+{{/modal-dialog}}

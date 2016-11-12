@@ -1,0 +1,93 @@
+$header-height: 50px;
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: $header-height;
+  background-color: white;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.12);
+  z-index: 100;
+  line-height: 50px;
+
+  .hide {
+    display: none;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+  }
+  .options {
+    float: right;
+    display: inline-block;
+    margin-right: 50px;
+
+    button {
+      border: none;
+      outline: none;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    div {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+    .search {
+      background-image: url(../img/searchIcon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 10px;
+    }
+
+    .add {
+      background-image: url(../img/addContact.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    input {
+      width: 300px;
+      border-radius: 10px;
+      background-color: #ff7d63;
+      border: 0;
+      height: 24px;
+      padding: 10px;
+      outline: none;
+      color: #f4eeee;
+    }
+
+    ::-webkit-input-placeholder {
+       color: #f5f5f5;
+       opacity: 0.8;
+    }
+
+    :-moz-placeholder {
+      color: #f5f5f5;
+      opacity: 0.8;
+    }
+
+    ::-moz-placeholder {
+      color: #f5f5f5;
+      opacity: 0.8;
+    }
+
+    :-ms-input-placeholder {
+      color: #f5f5f5;
+      opacity: 0.8;
+    }
+  }
+  .title-wrapper {
+    height: 13px;
+    font-weight: bold;
+    line-height: 4;
+    text-align: center;
+    color: #ff7d63;
+    margin-left: 50px;
+    display: inline-block;
+  }
+}

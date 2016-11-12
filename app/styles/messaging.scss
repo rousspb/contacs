@@ -1,0 +1,131 @@
+// ----------------------------------------------------------------------------
+//  Define Variables used for these components
+// ----------------------------------------------------------------------------
+
+$message-block--bg:                 #FAD459 !default;
+$message-block--border:             1px solid yellow !default;
+$message-block--padding:            16px !default;
+$message-block--position:           fixed !default;
+$message-block--right-position:     12px !default;
+$message-block--left-position:      12px !default;
+$message-block--y-position:         12px !default;
+$message-block--y-from:             200px !default;
+$message-block--opacity-start:      .1 !default;
+$message-block--max-width:          400px !default;
+$c-light-blue:                      blue;
+$c-green:                           #d7f2d7;
+$c-yellow:                          yellow;
+$c-white:                           #fff;
+$c-red:                             red;
+
+
+// ----------------------------------------------------------------------------
+//  Messaging
+// ----------------------------------------------------------------------------
+
+.message-block {
+  background: $message-block--bg;
+  border: $message-block--border;
+  bottom: $message-block--y-position;
+  left: $message-block--right-position;
+  margin: auto;
+  max-width: $message-block--max-width;
+  opacity: $message-block--opacity-start;
+  padding: $message-block--padding;
+  position: $message-block--position;
+  right: $message-block--right-position;
+  -webkit-transform: translateY($message-block--y-from);
+          transform: translateY($message-block--y-from);
+  transition: transform .2s ease-in-out,
+              opacity .2s ease-in-out;
+  visibility: hidden;
+  z-index: 0;
+  color: #666;
+
+  // active state for message block
+  &.is-active {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    visibility: visible;
+    z-index: 20;
+  }
+
+  // > p:last-of-type {
+  //   margin-bottom: 0;
+  // }
+
+  &.alert-info {
+    background: $c-light-blue;
+    border: 1px solid $c-light-blue;
+  }
+
+  &.alert-success {
+    background: $c-green;
+    border: 1px solid $c-green;
+  }
+
+  &.alert-warning {
+    background: $c-yellow;
+    border: 1px solid $c-yellow;
+  }
+
+  &.alert-error {
+    color: $c-white;
+    background: $c-red;
+    border: 1px solid $c-red;
+  }
+
+  &__dismiss-btn {
+    background: none;
+    border: none;
+    bottom: 0;
+    position: absolute;
+    right: 4px;
+    top: 0;
+
+    &:after {
+      color: rgba(0,0,0,.45);
+      content: "\e619";
+      font-family: 'icomoon';
+      speech: none;
+    }
+  }
+
+  // allow for room for the dismissal button
+  &--has-dismiss {
+    padding-right: 40px;
+  }
+}
+
+// message blocks should be treated like growl notifications and
+// require JavaScript to allow them to be displayed after an action
+// has been performed, and should either:
+// 1. dismiss themselves after X amount of time
+// 2. have a dismissal button that allows the user to dismiss
+//    the notification message when they are ready **
+//
+// If using option 2, depending on the message, it may make more
+// sense to use a modal window as if a message is important enough
+// to require a user action to close it, it should probably have
+// more visual importance to it as well.
+
+
+// Example Mark-up
+// ----------------------------------------------------------------------------
+// <div class="message-block"> <!-- ** --<
+//   <h3>Message Title (optional)</h3>
+//   <p>
+//     Message goes here (required)
+//   </p>
+//  <button type="button" class="js-message-dismiss-btn message-block__dismiss-btn">
+//    <span class="is-visually-hidden">Dismiss</span>
+//  </button>
+// </div>
+//
+// <!-- ** add class .message-block--has-dismiss if
+//      the block contains a dismissal button -->
+//
+// ----------------------------------------------------------------------------
+//  Define Variables used for these components
+// ----------------------------------------------------------------------------

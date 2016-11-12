@@ -1,0 +1,7 @@
+<ul class="contacts-list">
+  {{#each contacts as |contact|}}
+  {{#link-to "contacts.view" contact.id}}
+    {{cmp-contact contact = contact}}
+  {{/link-to}}
+  {{/each}}
+</ul>

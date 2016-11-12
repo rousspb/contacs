@@ -1,0 +1,11 @@
+<section class="contacts-wrapper {{unless showContactList 'hide'}}">
+  {{#if filterContacts}}
+    <button class="sort-by {{if sortAsc 'asc' 'desc'}}" {{action "sort"}}> Sort by name </button>
+    {{cmp-contacts contacts = filterContacts}}
+  {{else}}
+    <h1> No records found, try another one.</h1>
+  {{/if}}
+</section>
+<div class="contact-wrapper">
+  {{outlet}}
+</div>

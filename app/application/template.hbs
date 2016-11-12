@@ -1,0 +1,16 @@
+{{cmp-header add = (action "add") searching=searching}}
+<section class="main {{if isDetail 'open-detail'}}">
+  {{outlet}}
+</section>
+
+{{#each flashMessages.arrangedQueue as |flash|}}
+  {{#flash-message class="message-block has-dismiss is-active"
+    flash=flash as |component flash|}}
+    <p>{{flash.message}}</p>
+    <button type="button" class="message-block__dismiss-btn">
+      <span class="is-visually-hidden">
+        Dismiss
+      </span>
+    </button>
+  {{/flash-message}}
+{{/each}}
