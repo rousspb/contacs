@@ -1,7 +1,8 @@
 import Ember from 'ember';
-const { Controller, computed, get, set } = Ember;
+const { Controller, computed, get, set, isPresent } = Ember;
 export default Controller.extend({
   queryParams: ['name'],
+  name: null,
   sortProperties: ['firstName:asc', 'firstName:desc'],
   sortFirstName: computed.sort('model.contacts', 'sortProperties'),
 
@@ -13,9 +14,9 @@ export default Controller.extend({
 
   filterContacts: computed('name', 'model.contacts', {
     get() {
-      let name = get(this, 'name');
       let contacts = get(this, 'model.contacts');
-      if(name) {
+      if(isPresent(get(this, 'name'))) {
+      let name = get(this, 'name');
         return contacts.filter(function(i) {
           return i.get('firstName').toLowerCase().indexOf(name.toLocaleLowerCase()) !== -1;
         });
