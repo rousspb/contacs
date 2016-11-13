@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{cmp-notes/cmp-note}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#cmp-notes/cmp-note}}
-      template block text
-    {{/cmp-notes/cmp-note}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.note-action .remove').length > 0, true, 'I can see the container');
 });

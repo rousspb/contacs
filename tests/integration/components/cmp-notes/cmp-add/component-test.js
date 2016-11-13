@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{cmp-notes/cmp-add}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:"
-  this.render(hbs`
-    {{#cmp-notes/cmp-add}}
-      template block text
-    {{/cmp-notes/cmp-add}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.add .picture').length > 0, true, 'I can see the container');
 });

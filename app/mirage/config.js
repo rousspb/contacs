@@ -61,7 +61,7 @@ export default function() {
       note
     };
   });
-  this.get('/notes', (schema, req) => {
+  this.get('/notes', (schema) => {
     return {
       notes: schema.db.notes
     };

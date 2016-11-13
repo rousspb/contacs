@@ -4,12 +4,12 @@ export default Component.extend({
   classNames: ['note-container'],
   isDeleting: computed({
     get() {
-      return false
+      return false;
     }
   }),
   isEditing: computed({
     get() {
-      return false
+      return false;
     }
   }),
   actions: {

@@ -16,7 +16,7 @@ export default Controller.extend(NoteValidations, {
       set(this, 'note.contact', get(this, 'model.contact'));
       let note = get(this, 'note');
       set(this, 'note', store.createRecord('note', note));
-      get(this, 'note').save().then((note) => {
+      get(this, 'note').save().then(() => {
         get(this, 'flashMessages').success('Note added.');
         set(this, 'note', {});
         set(this, 'noteErrors', {});
@@ -40,7 +40,7 @@ export default Controller.extend(NoteValidations, {
       });
     },
     save(note) {
-      note.save().then((note) => {
+      note.save().then(() => {
         get(this, 'flashMessages').success('Note updated.');
       }).catch(() => {
         get(this, 'flashMessages').danger('There was an error.');
