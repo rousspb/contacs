@@ -39,6 +39,13 @@ export default Controller.extend(NoteValidations, {
       }).catch(() => {
         get(this, 'flashMessages').danger('There was an error deleting the note.');
       });
+    },
+    save(note) {
+      note.save().then((note) => {
+        get(this, 'flashMessages').success('Note updated.');
+      }).catch(() => {
+        get(this, 'flashMessages').danger('There was an error.');
+      });
     }
   }
 });

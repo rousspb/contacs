@@ -3,7 +3,10 @@ const { Component , get} = Ember;
 export default Component.extend({
   actions: {
     delete(note){
-      get(this, 'delete')(note)
+      get(this, 'delete')(note);
+    },
+    save(note) {
+      get(this, 'save')(note);
     }
   }
 });

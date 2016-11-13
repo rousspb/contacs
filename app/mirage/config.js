@@ -53,6 +53,14 @@ export default function() {
       note
     };
   });
+  this.put('/notes/:id', (schema, req) => {
+    let id = req.params.id;
+    let record = JSON.parse(req.requestBody).note;
+    let note = schema.db.notes.update(id, record);
+    return {
+      note
+    };
+  });
   this.get('/notes', (schema, req) => {
     return {
       notes: schema.db.notes

@@ -1,8 +1,22 @@
 <div class="note-action">
-  <span class="remove" {{action "delete"}}></span>
-  <span class="edit"></span>
+  <span class="remove" {{action "toggleDeleteRecord"}}></span>
+  {{#unless isEditing}}
+    <span class="edit" {{action "toggleEditRecord"}}></span>
+  {{else}}
+    <span class="save" {{action "save"}}></span>
+  {{/unless}}
 </div>
-  <p>
-    {{note.text}}
-  </p>
+  {{#unless isEditing}}
+    <p>
+      {{note.text}}
+    </p>
+  {{else}}
+    {{textarea name="name" rows="8" cols="40" value=note.text}}
+  {{/unless}}
   <h3>Created at: <label>{{moment-format note.createdAt}}</label></h3>
+  {{#if isDeleting}}
+    {{cmp-delete
+      isDeleting = isDeleting
+      delete = (action "delete")
+    }}
+  {{/if}}

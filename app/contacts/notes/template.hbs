@@ -1,4 +1,4 @@
 <section class="wrapper-notes">
   {{cmp-notes/cmp-add contact = model.contact add=(action "add") noteErrors=noteErrors note=note}}
-  {{cmp-notes contact = model.contact delete=(action 'delete')}}
+  {{cmp-notes contact = model.contact delete=(action "delete") save=(action "save")}}
 </section>

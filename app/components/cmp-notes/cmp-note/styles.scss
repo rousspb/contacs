@@ -44,5 +44,16 @@
         background-repeat: no-repeat;
       }
     }
+    .save {
+      &::after {
+        content: ' ';
+        display: inline-block;
+        background-size: contain;
+        width: 17px;
+        height: 21px;
+        background-image: url(../img/save.png);
+        background-repeat: no-repeat;
+      }
+    }
   }
 }
