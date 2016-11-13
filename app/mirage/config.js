@@ -12,4 +12,12 @@ export default function() {
   this.put('/contacts/:id');
   this.get('/notes');
   this.post('/notes');
+  // this.get('/notes?', (schema, req) => {
+  //   let id = JSON.parse(req.queryParams.contact);
+  //   let results = schema.db.notes.where({ 'contact': id });
+  //   return {
+  //     data: results
+  //   };
+  // })
+  // this.get('/notes');
 }

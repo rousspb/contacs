@@ -12,7 +12,7 @@ export default Controller.extend({
     }
   }),
 
-  filterContacts: computed('name', 'model.contacts', {
+  filterContacts: computed('name', 'model.contacts.[]', {
     get() {
       let contacts = get(this, 'model.contacts');
       if(isPresent(get(this, 'name'))) {

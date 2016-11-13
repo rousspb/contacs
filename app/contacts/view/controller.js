@@ -22,8 +22,8 @@ export default Controller.extend(ContactValidations, {
           } else {
             get(this, 'flashMessages').success('Record updated.');
           }
-        }).catch(() => {
-          get(this, 'flashMessages').danger('There was an error.');
+        }).catch((e) => {
+          get(this, 'flashMessages').danger('There was an error.' + e);
         });
       }).catch(() => {
         this.getErrors(get(this, 'errors.contact'));

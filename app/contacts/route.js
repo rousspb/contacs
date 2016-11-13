@@ -10,5 +10,11 @@ export default Route.extend({
     return RSVP.hash({
       contacts: this.get('store').findAll('contact')
     });
+  },
+
+  actions: {
+    refreshModel: function() {
+      this.refresh();
+    }
   }
 });
