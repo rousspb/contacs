@@ -8,10 +8,5 @@ export default Route.extend({
     return RSVP.hash({
       contact: this.store.find('contact', params.id)
     });
-  },
-  actions: {
-    refreshModel: function() {
-      this.refresh();
-    }
   }
 });

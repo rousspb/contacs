@@ -58,12 +58,5 @@ export default function() {
       notes: schema.db.notes
     };
   });
-  // this.get('/notes?', (schema, req) => {
-  //   let id = JSON.parse(req.queryParams.contact);
-  //   let results = schema.db.notes.where({ 'contact': id });
-  //   return {
-  //     data: results
-  //   };
-  // })
-  // this.get('/notes');
+  this.delete('/notes/:id');
 }

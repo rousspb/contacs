@@ -19,4 +19,30 @@
     font-size: 12px;
     font-weight: normal;
   }
+  .note-action {
+    text-align: right;
+  .edit {
+
+      &::after {
+        content: ' ';
+        display: inline-block;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/edit.png);
+        background-repeat: no-repeat;
+      }
+    }
+    .remove {
+      &::after {
+        content: ' ';
+        display: inline-block;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/remove.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
 }

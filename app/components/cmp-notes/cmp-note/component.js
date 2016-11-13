@@ -1,5 +1,11 @@
 import Ember from 'ember';
-const { Component } = Ember;
+const { Component, get } = Ember;
 export default Component.extend({
-  classNames: ['note-container']
+  classNames: ['note-container'],
+
+  actions: {
+    delete() {
+      get(this, 'delete')(get(this, 'note'));
+    }
+  }
 });

@@ -31,8 +31,14 @@ export default Controller.extend(NoteValidations, {
 
   actions: {
     add() {
-      // console.log(get(this, 'contact.id'));
       this.save();
+    },
+    delete(note) {
+      note.destroyRecord().then(() => {
+        get(this, 'flashMessages').success('Note deleted.');
+      }).catch(() => {
+        get(this, 'flashMessages').danger('There was an error deleting the note.');
+      });
     }
   }
 });

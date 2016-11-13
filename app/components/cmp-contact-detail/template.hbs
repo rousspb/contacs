@@ -81,10 +81,7 @@
   {{/if}}
   <button class="save" type="button" name="save" {{action "save"}}>Save</button>
 </section>
-djfhaskdjfhka
-{{#each contact.notes as |note|}}
-  {{note.text}}
-{{/each}}
+
 {{#if isDeleting}}
   {{cmp-delete
     isDeleting = isDeleting
