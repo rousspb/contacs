@@ -11,7 +11,7 @@
       {{note.text}}
     </p>
   {{else}}
-    {{textarea name="name" rows="8" cols="40" value=note.text}}
+    {{textarea name="edit" rows="8" cols="40" value=note.text}}
   {{/unless}}
   <h3>Created at: <label>{{moment-format note.createdAt}}</label></h3>
   {{#if isDeleting}}
