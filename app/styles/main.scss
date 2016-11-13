@@ -26,6 +26,44 @@
   transition-timing-function: ease-out;
 }
 
+.wrapper-notes {
+  margin-top: 15px;
+
+  .add-note {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .picture {
+    display: inline-block;
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  textarea {
+    width: calc(100% - 60px);
+    height: 50px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #c2c2c2;
+  }
+
+  .section-actions {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    margin-left: 60px;
+  }
+}
+
 .open-detail {
   .contacts-wrapper {
     left: 0;
@@ -67,6 +105,50 @@
   &.desc::after {
     background-image: url(../img/desc.png);
   }
+}
+
+.section-actions {
+  text-align: right;
+  button {
+    background-color: transparent;
+    border-width: 1px;
+    outline: none;
+    width:100px;
+    border-radius: 10px;
+  }
+
+  .btn-cancel {
+    border: 1px solid #dbdbdb;
+    &:hover {
+      background-color: #dbdbdb;
+    }
+  }
+
+  .btn-delete {
+    border-color: #ff3860;
+    color: #ff3860;
+    &:hover {
+      background-color: #ff3860;
+      color: #fff;
+    }
+  }
+
+  .btn-success {
+    border-color: #23d160;
+    color: #23d160;
+    &:hover {
+      background-color: #23d160;
+      outline: none;
+      color: #fff;
+    }
+  }
+}
+
+.error {
+  color: #ff7700;
+  font-style: italic;
+  font-size: 10px;
+  text-align: left;
 }
 
 @media screen and (max-width: 1005px) {

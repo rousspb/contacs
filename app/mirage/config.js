@@ -10,4 +10,6 @@ export default function() {
   this.delete('/contacts/:id');
   this.post('/contacts');
   this.put('/contacts/:id');
+  this.get('/notes');
+  this.post('/notes');
 }

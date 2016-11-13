@@ -1,0 +1,12 @@
+<div class="add">
+  <div class="picture">
+    <img src="{{contact.picture}}" style="width:50px;height:50px;" alt=""/>
+  </div>
+  {{textarea name="name" rows="8" cols="40" value=note.text}}
+  {{#if noteErrors.text}}
+    <label class="error text"> {{noteErrors.text}}</label>
+  {{/if}}
+</div>
+<div class="section-actions">
+  <button class="btn-success" {{action "add"}}>Add Note</button>
+</div>
