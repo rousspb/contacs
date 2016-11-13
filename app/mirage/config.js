@@ -9,5 +9,5 @@ export default function() {
   this.get('/contacts/:id');
   this.delete('/contacts/:id');
   this.post('/contacts');
-  this.patch('/contacts/:id');
+  this.put('/contacts/:id');
 }
