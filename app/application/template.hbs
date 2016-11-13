@@ -4,7 +4,7 @@
 </section>
 
 {{#each flashMessages.arrangedQueue as |flash|}}
-  {{#flash-message class="message-block has-dismiss is-active"
+  {{#flash-message class="message-block is-active"
     flash=flash as |component flash|}}
     <p>{{flash.message}}</p>
     <button type="button" class="message-block__dismiss-btn">

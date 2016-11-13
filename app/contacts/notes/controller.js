@@ -23,9 +23,8 @@ export default Controller.extend(NoteValidations, {
       }).catch(() => {
         get(this, 'flashMessages').danger('There was an error.');
       });
-    }).catch((e) => {
+    }).catch(() => {
       this.getErrors(get(this, 'errors.note'));
-      console.log(e);
     });
   },
 

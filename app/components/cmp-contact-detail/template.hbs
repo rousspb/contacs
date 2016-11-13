@@ -1,7 +1,9 @@
 <div class="photo-wrapper">
   <img src="{{contact.picture}}" alt="">
 </div>
-{{#link-to "contacts.notes" contact.id}}<button class="notes">See Notes</button>{{/link-to}}
+{{#if contact.id}}
+  {{#link-to "contacts.notes" contact.id}}<button class="notes">See notes </button>{{/link-to}}
+{{/if}}
 <div class="information">
   <div class="">
     {{input type="text" name="name" value=contact.firstName placeholder="First Name required... "}}
