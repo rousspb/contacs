@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-const { attr } = DS;
+const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
   firstName: attr('string'),
@@ -12,5 +12,6 @@ export default DS.Model.extend({
   phone: attr('string'),
   workPhone: attr('string'),
   homePhone: attr('string'),
-  address: attr('string')
+  address: attr('string'),
+  notes: hasMany('note', { async: true})
 });

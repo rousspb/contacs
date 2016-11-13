@@ -13,5 +13,6 @@ export default Mirage.Factory.extend({
   phone: faker.phone.phoneNumber(),
   workPhone: faker.phone.phoneNumber(),
   homePhone: faker.phone.phoneNumber(),
-  address: faker.address.streetAddress
+  address: faker.address.streetAddress,
+  notes: ["1","3"]
 });

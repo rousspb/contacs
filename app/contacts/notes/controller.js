@@ -20,7 +20,6 @@ export default Controller.extend(NoteValidations, {
         get(this, 'flashMessages').success('Note added.');
         set(this, 'note', {});
         set(this, 'noteErrors', {});
-        this.send('refreshModel');
       }).catch(() => {
         get(this, 'flashMessages').danger('There was an error.');
       });

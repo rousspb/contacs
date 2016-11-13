@@ -39,8 +39,25 @@ export default function() {
       contact
     };
   });
-  this.get('/notes');
-  this.post('/notes');
+
+  this.get('/notes/:id', (schema, req) => {
+    let id = req.params.id;
+    return {
+      note: schema.db.notes.find(id)
+    };
+  });
+  this.post('/notes', (schema, req) => {
+    let record = JSON.parse(req.requestBody).note;
+    let note = schema.db.notes.insert(record);
+    return {
+      note
+    };
+  });
+  this.get('/notes', (schema, req) => {
+    return {
+      notes: schema.db.notes
+    };
+  });
   // this.get('/notes?', (schema, req) => {
   //   let id = JSON.parse(req.queryParams.contact);
   //   let results = schema.db.notes.where({ 'contact': id });
