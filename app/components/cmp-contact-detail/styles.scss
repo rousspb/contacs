@@ -107,3 +107,16 @@ section {
     color: #666;
   }
 }
+
+.notes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 150px;
+  background: transparent;
+  border: none;
+  color: #00a1ff;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
