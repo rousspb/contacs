@@ -6,8 +6,8 @@ Also, this application was built using the pods structure https://ember-cli.com/
 
 There are one main route called contacts to show the list of all contacts, and two nested routes:
 view and notes.
-View: Shows the information detail by each contact. Here, you can edit, and remove a contact. This view has a link to change the screen to see the notes.
-Notes: List of notes. Here you can read, edit and remove a note.
+* View: Shows the information detail by each contact. Here, you can edit, and remove a contact. This view has a link to change the screen to see the notes.
+* Notes: List of notes. Here you can read, edit and remove a note.
 
 ## Extra addons:
 * ember-cli-page-object: The ember-cli-page-object addon makes it easy to create page objects for your acceptance and integration tests.
