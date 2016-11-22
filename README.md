@@ -4,7 +4,7 @@ This applications shows the contact list and linked notes by each one.
 The exercice is using ember data with mirage to populate the list and the contact info. As the notes by each contact.
 Also, this application was built using the pods structure https://ember-cli.com/user-guide/#using-pods.
 
-There are one main route called contacts to show the list of all contacts, and two nested routes:
+There is one main route called contacts to show the list of all contacts, and two nested routes:
 view and notes.
 * View: Shows the information detail by each contact. Here, you can edit, and remove a contact. This view has a link to change the screen to see the notes.
 * Notes: List of notes. Here you can read, edit and remove a note.
