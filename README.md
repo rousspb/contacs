@@ -14,7 +14,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository (https://github.com/rousspb/contacs.git)
+* `git clone https://github.com/rousspb/contacs.git`
 * change into the new directory
 * `npm install`
 * `bower install`
