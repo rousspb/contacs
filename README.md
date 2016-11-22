@@ -1,6 +1,6 @@
 # Contacts
 
-This applications show the list a contact and linked notes by each one.
+This applications show the a contact list and linked notes by each one.
 
 ## Prerequisites
 
